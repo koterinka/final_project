@@ -1,14 +1,11 @@
 package ru.atm;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
-public class ATM {
-
-    public BigDecimal GetCardBalance(CardInfo card, int pinCode)
-    {
-        return new BigDecimal(new BigInteger("0"));
+public class ATM implements Application {
+    @Override
+    public BigDecimal GetCardBalance(CardInfo card, String pinCode) {
+        return new BigDecimal("0");
+        //todo money, currency, amount
     }
-
-
 }

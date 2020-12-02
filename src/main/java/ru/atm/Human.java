@@ -2,19 +2,19 @@ package ru.atm;
 
 import ru.atm.ATM;
 import ru.atm.CardInfo;
+import lombok.Getter;
+import lombok.Setter;
+import java.math.BigDecimal;
 
 public class Human {
+    @Getter @Setter private CardInfo card;
+    @Getter @Setter private String cardPin;
 
-    public void InquireAboutBalance(ATM atm)
-    {
-        System.out.println("My balance is: " + atm.GetCardBalance(this.card, cardPin));
-    }
-
-    private CardInfo card;
-    private int cardPin;
-
-    public Human(CardInfo card, int cardPin) {
+    public Human(CardInfo card, String cardPin) {
         this.card = card;
         this.cardPin = cardPin;
+    }
+    public BigDecimal GetCardBalance(Application atm){
+      return atm.GetCardBalance(this.card, cardPin);
     }
 }
