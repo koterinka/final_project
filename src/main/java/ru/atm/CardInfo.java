@@ -5,13 +5,15 @@ import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class CardInfo {
-    @Getter @Setter private String CardNumber;
-    @Getter @Setter private Date ExpirationDate;
+    private String CardNumber;
+    private Date ExpirationDate;
 
-    public CardInfo(String Cardnumber, Date ExpirationDate) {
-        this.CardNumber = Cardnumber;
-        this.ExpirationDate = ExpirationDate;
+    public CardInfo(String cardNumber, Date expirationDate) {
+        this.CardNumber = cardNumber;
+        this.ExpirationDate = expirationDate;
 
     }
 }

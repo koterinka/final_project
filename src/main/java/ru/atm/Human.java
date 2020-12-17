@@ -6,15 +6,17 @@ import lombok.Getter;
 import lombok.Setter;
 import java.math.BigDecimal;
 
+@Getter
+@Setter
 public class Human {
-    @Getter @Setter private CardInfo card;
-    @Getter @Setter private String cardPin;
+    private CardInfo card;
+    private String cardPin;
 
     public Human(CardInfo card, String cardPin) {
         this.card = card;
         this.cardPin = cardPin;
     }
-    public BigDecimal GetCardBalance(Application atm){
-      return atm.GetCardBalance(this.card, cardPin);
+    public BigDecimal getCardBalance(Application app){
+      return app.getCardBalance(this.card, cardPin);
     }
 }
