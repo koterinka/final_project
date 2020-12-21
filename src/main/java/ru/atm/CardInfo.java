@@ -1,6 +1,5 @@
 package ru.atm;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +13,5 @@ public class CardInfo {
     public CardInfo(String cardNumber, Date expirationDate) {
         this.CardNumber = cardNumber;
         this.ExpirationDate = expirationDate;
-
     }
 }

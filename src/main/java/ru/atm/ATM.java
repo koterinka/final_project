@@ -1,11 +1,12 @@
 package ru.atm;
 
-import java.math.BigDecimal;
+import java.util.Date;
 
 public class ATM implements Application {
     @Override
-    public BigDecimal getCardBalance(CardInfo card, String pinCode) {
-        return new BigDecimal("0");
-        //todo money, currency, amount
+    public Money getCardBalance(CardInfo card, String pinCode) throws Exception {
+        if(card.getExpirationDate().before(new Date()))
+            throw new Exception("card expired");
+        return new Money("777", Currency.EUR);
     }
 }

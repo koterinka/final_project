@@ -4,7 +4,6 @@ import ru.atm.ATM;
 import ru.atm.CardInfo;
 import lombok.Getter;
 import lombok.Setter;
-import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -16,7 +15,7 @@ public class Human {
         this.card = card;
         this.cardPin = cardPin;
     }
-    public BigDecimal getCardBalance(Application app){
-      return app.getCardBalance(this.card, cardPin);
+    public Money getCardBalance(Application app) throws Exception {
+        return app.getCardBalance(this.card, cardPin);
     }
 }
