@@ -26,6 +26,8 @@ public class Main {
         atm.getAccountStorage().addAccount(new Account (cardInfo.getCardNumber(),new Money("777",Currency.EUR)));
     try {
             logger.info("My balance is {}", human.getCardBalance(atm));
+
+        Account a = atm.getAccountStorage().getAccountByCondition(acct -> acct.getBalance().getAmount().floatValue() > 100);
         }
         catch (Exception e){
             logger.error("Exception: "+e);
