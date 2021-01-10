@@ -1,10 +1,14 @@
 package ru.atm;
 
 import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Money {
-    BigDecimal amount;
-    Currency currency;
+    private BigDecimal amount;
+    private Currency currency;
 
     public Money(String amount, Currency currency) {
         this.amount = new BigDecimal(amount);

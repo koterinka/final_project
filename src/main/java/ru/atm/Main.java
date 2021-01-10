@@ -15,16 +15,19 @@ public class Main {
         SimpleDateFormat sdf= new SimpleDateFormat ("yyyy-MM-dd");
         Date ExpirationDate;
         try {
-            ExpirationDate = sdf.parse("2020-12-23");
-        } catch (Exception e){
+            ExpirationDate = sdf.parse("2021-12-23");
+        }
+        catch (Exception e){
             ExpirationDate = new Date()
 ;        }
         CardInfo cardInfo= new CardInfo("12345678",ExpirationDate);
         Human human = new Human(cardInfo, "4321");
         ATM atm= new ATM();
-        try {
+        atm.getAccountStorage().addAccount(new Account (cardInfo.getCardNumber(),new Money("777",Currency.EUR)));
+    try {
             logger.info("My balance is {}", human.getCardBalance(atm));
-        } catch (Exception e){
+        }
+        catch (Exception e){
             logger.error("Exception: "+e);
         }
     }
